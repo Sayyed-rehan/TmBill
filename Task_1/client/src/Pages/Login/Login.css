@@ -1,0 +1,21 @@
+.login-container{
+   /* background-color: lawngreen; */
+   width:100vw;
+   height:100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center; 
+   gap:3vh
+}
+
+.login-box{
+   /* background-color: coral; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:calc(40vh);
+    width:calc(40vw);
+    padding:20px;
+    border-radius:10px
+}

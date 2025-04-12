@@ -1,0 +1,22 @@
+.sign-container{
+    background-color: white;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:3vh
+}
+
+
+.sign-box{
+    /* background-color: lightcoral; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(60vh);
+    width: calc(40vw);
+    padding: 20px;
+    border-radius: 10px;
+}
