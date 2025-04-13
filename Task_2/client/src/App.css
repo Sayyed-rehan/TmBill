@@ -1,0 +1,41 @@
+.home-container{
+    /* background-color: lightcoral; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    gap:5vh
+}
+
+.search-area{
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 2vw;
+}
+
+.search-bar{
+    /* background-color: antiquewhite; */
+    width: 40vw;
+}
+
+.search-bar .MuiTextField-root{
+    /* border-radius: 20px; */
+    /* background-color: red; */
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:wrap;
+    /* font-weight: bold; */
+    overflow:auto;
+   
+}
+
+.MuiTypography-h4{
+    font:poppins;
+}
