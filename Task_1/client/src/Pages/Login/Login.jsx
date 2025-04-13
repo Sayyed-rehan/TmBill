@@ -24,7 +24,7 @@ const Login = ()=>{
     }
 
     const handleLogin = async()=>{
-        const data = await axios.post("http://localhost:5000/login",{
+        const data = await axios.post("/login",{
             email:form.email,
             password:form.password
         })

@@ -1,5 +1,10 @@
-import { connect } from "mongoose"
+import { connect, set } from "mongoose"
+import dotenv from 'dotenv';
 
-connect("mongodb://localhost:27017/TMBILL")
+
+dotenv.config();
+set('strictQuery', false);
+
+connect(process.env.MONGODB_URL)
 .then((res)=>console.log('mongodb connected...'))
 .catch((err)=>console.log(err))

@@ -28,7 +28,7 @@ const Sign = () => {
     }
 
     const handleSign = async () => {
-        const data = await axios.post('http://localhost:5000/sign', {
+        const data = await axios.post('/sign', {
             name: form.name,
             contact: form.contact,
             email: form.email,
