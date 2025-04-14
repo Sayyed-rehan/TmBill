@@ -46,7 +46,7 @@ const SearchModal = (props) => {
             return
         }
 
-        const data = await axios.patch(`/${props.updateData._id}`, {
+        const data = await axios.patch(`/update/${props.updateData._id}`, {
             title: task.title,
             desc: task.desc
         })
