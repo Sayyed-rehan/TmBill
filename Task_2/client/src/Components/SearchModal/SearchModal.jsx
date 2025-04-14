@@ -22,7 +22,7 @@ const SearchModal = (props) => {
     }
 
     const handleAddTask = async () => {
-        const data = await axios.post("http://localhost:5000/create", {
+        const data = await axios.post("/create", {
             title: task.title,
             desc: task.desc
         })
@@ -46,7 +46,7 @@ const SearchModal = (props) => {
             return
         }
 
-        const data = await axios.patch(`http://localhost:5000/update/${props.updateData._id}`, {
+        const data = await axios.patch(`/${props.updateData._id}`, {
             title: task.title,
             desc: task.desc
         })

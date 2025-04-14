@@ -21,7 +21,7 @@ const Cards = (props) => {
         })
             .then(async (willDelete) => {
                 if (willDelete) {
-                    const data = await axios.delete(`http://localhost:5000/delete/${props.data._id}`)
+                    const data = await axios.delete(`/delete/${props.data._id}`)
                     swal("Poof! Your Task has been deleted!", {
                         icon: "success",
                     });
