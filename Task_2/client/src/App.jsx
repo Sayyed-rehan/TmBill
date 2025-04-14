@@ -27,18 +27,18 @@ const App = () => {
     setsearch_param({ title: e.target.value, desc: e.target.value })
   }
 
-  const handleCloseModal = ()=>{
+  const handleCloseModal = () => {
     setopen(false)
     setupdateData(null)
   }
 
-  const toBeUpdated = (data)=>{
-    console.log('this data need to update',data);
+  const toBeUpdated = (data) => {
+    console.log('this data need to update', data);
     setupdateData(data)
     setopen(true)
   }
 
-  const handleNeedToRefresh = ()=>{
+  const handleNeedToRefresh = () => {
     setneedToRefresh(!needToRefresh)
   }
 
@@ -47,7 +47,8 @@ const App = () => {
 
     console.log('I am called');
     const fetchData = async () => {
-      const data = await axios.get(`http://localhost:5000/read?title=${search_param.title}`)
+      
+      const data = await axios.get(`/read?title=${search_param.title}`)
       console.log(data.data);
 
       if (data.data.success) {
@@ -65,13 +66,13 @@ const App = () => {
         <Box className="search-bar">
           <TextField label='Search Task here...' fullWidth value={search_param.title} onChange={handleInputs} />
         </Box>
-        <IconButton onClick={()=>setopen(true)}>
-        {/* <Fab color="primary" aria-label="add"> */}
+        <IconButton onClick={() => setopen(true)}>
+          {/* <Fab color="primary" aria-label="add"> */}
           <AddIcon fontSize='large' color='success' />
-        {/* </Fab> */}
+          {/* </Fab> */}
         </IconButton>
         <Modal open={open} onClose={handleCloseModal}>
-          <SearchModal 
+          <SearchModal
             handleCloseModal={handleCloseModal}
             updateData={updateData}
             handleNeedToRefresh={handleNeedToRefresh}

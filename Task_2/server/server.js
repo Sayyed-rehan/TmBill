@@ -3,15 +3,20 @@ const app = express()
 import "./DB/connect.js"
 import todo from "./Models/todoSchema.js"
 import cors from "cors"
+import dotenv from 'dotenv'
+import path from "path"
 
+dotenv.config();
+const ___dirname = path.resolve()
+const PORT = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(cors())
 
-app.get("/", async (req, res) => {
-    const data = await todo.find()
-    res.send(data)
-})
+// app.get("/", async (req, res) => {
+//     const data = await todo.find()
+//     res.send(data)
+// })
 
 //create
 app.post("/create", async (req, res) => {
@@ -118,9 +123,19 @@ app.delete("/delete/:id", async(req,res)=>{
 })
 
 
+//production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(___dirname, '..', 'client', 'dist')));
+  
+    app.get('*"my-name"', (req, res) => {
+      res.sendFile(path.join(___dirname, '..', 'client', 'dist', 'index.html'));
+    });
+}
 
 
-app.listen(5000, () => {
-    console.log("Server started at 5000...");
+
+
+app.listen(PORT, () => {
+    console.log(`Server started at ${PORT}...`);
 })
 
