@@ -1,7 +1,13 @@
 .modal-box{
-    position: absolute;
+    /* position: absolute;
     top: 25%;
-    left:30%;
+    left:30%; */
+    /* background-color: red; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
 }
 
@@ -19,6 +25,14 @@
     padding-top: 10px;
     padding-bottom: 10px;
     overflow: auto;
+
+    @media screen and (max-width:850px) {
+        width:70vw;
+    }
+
+    @media screen and (max-width:500px) {
+        width:90vw;
+    }
 }
 
 .modal-inputs{
