@@ -28,10 +28,12 @@ const App = () => {
   }
 
   const handleCloseModal = () => {
+    console.log("i m called")
     setopen(false)
     setupdateData(null)
   }
 
+  console.log('open = ',open);
   const toBeUpdated = (data) => {
     console.log('this data need to update', data);
     setupdateData(data)

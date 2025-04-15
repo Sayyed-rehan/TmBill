@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import "./SearchModal.css"
 import { Alert, Box, Button, TextField, Typography } from "@mui/material"
 import axios from "axios"
@@ -32,7 +32,7 @@ const SearchModal = (props) => {
         if (data.data.success) {
             props.handleNeedToRefresh()
             props.handleCloseModal()
-            swal("Task Added Successfuly","" ,"success");
+            swal("Task Added Successfuly", "", "success");
         } else {
             seterror(data.data.mess)
         }
@@ -41,7 +41,7 @@ const SearchModal = (props) => {
 
     const handleUpdateTask = async () => {
 
-        if(!task.title || !task.desc){
+        if (!task.title || !task.desc) {
             seterror("Cannot be Emplty")
             return
         }
@@ -56,14 +56,31 @@ const SearchModal = (props) => {
         if (data.data.success) {
             props.handleNeedToRefresh()
             props.handleCloseModal()
-            swal("Task Updated Successfuly","" ,"success");
+            swal("Task Updated Successfuly", "", "success");
 
         } else {
             seterror(data.data.mess)
         }
-
-
     }
+
+
+
+    useEffect(() => {
+        const ModalBox = document.querySelector(".modal-box")
+        console.log(ModalBox)
+        ModalBox.addEventListener('click', (e) => {
+            // console.log("click", e.target)
+            let clicked_target = e.target
+            // console.log(clicked_target.classList)
+            if (clicked_target.classList[0] == 'modal-box') {
+                props.handleCloseModal()
+
+            }
+        })
+
+
+    })
+
 
     return (
         <Box className="modal-box">
