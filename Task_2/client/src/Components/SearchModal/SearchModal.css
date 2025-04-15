@@ -1,13 +1,13 @@
 .modal-box{
     position: absolute;
     top: 25%;
-    left:25%
+    left:30%;
   
 }
 
 .modal-container{
     background-color: white;
-    min-height: 50vh;
+    height: 50vh;
     width: 40vw;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     overflow-y: auto;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+    overflow: auto;
 }
 
 .modal-inputs{
@@ -32,5 +32,5 @@
 
 .modal-inputs .MuiTextField-root{
 
-   width: 70%;
+   width: 80%;
 }
