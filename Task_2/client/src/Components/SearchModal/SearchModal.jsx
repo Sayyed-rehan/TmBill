@@ -14,7 +14,6 @@ const SearchModal = (props) => {
         desc: props?.updateData?.desc || ""
     })
 
-    // console.log(props?.updateData);
     const [error, seterror] = useState(null)
 
     const handleTaskInput = (e) => {
@@ -27,7 +26,7 @@ const SearchModal = (props) => {
             desc: task.desc
         })
 
-        console.log(data.data)
+       
 
         if (data.data.success) {
             props.handleNeedToRefresh()
@@ -51,7 +50,7 @@ const SearchModal = (props) => {
             desc: task.desc
         })
 
-        console.log(data.data)
+        
 
         if (data.data.success) {
             props.handleNeedToRefresh()
@@ -67,11 +66,10 @@ const SearchModal = (props) => {
 
     useEffect(() => {
         const ModalBox = document.querySelector(".modal-box")
-        console.log(ModalBox)
+        
         ModalBox.addEventListener('click', (e) => {
-            // console.log("click", e.target)
+           
             let clicked_target = e.target
-            // console.log(clicked_target.classList)
             if (clicked_target.classList[0] == 'modal-box') {
                 props.handleCloseModal()
 

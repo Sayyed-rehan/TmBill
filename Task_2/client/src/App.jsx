@@ -13,7 +13,6 @@ const App = () => {
     title: "",
     desc: ""
   })
-  // console.log(search_param);
 
   const [Data, setData] = useState()
 
@@ -28,14 +27,14 @@ const App = () => {
   }
 
   const handleCloseModal = () => {
-    console.log("i m called")
+   
     setopen(false)
     setupdateData(null)
   }
 
-  console.log('open = ',open);
+  
   const toBeUpdated = (data) => {
-    console.log('this data need to update', data);
+    
     setupdateData(data)
     setopen(true)
   }
@@ -47,11 +46,11 @@ const App = () => {
 
   useEffect(() => {
 
-    console.log('I am called');
+  
     const fetchData = async () => {
       
       const data = await axios.get(`/read?title=${search_param.title}`)
-      console.log(data.data);
+    
 
       if (data.data.success) {
         setData(data.data.data)

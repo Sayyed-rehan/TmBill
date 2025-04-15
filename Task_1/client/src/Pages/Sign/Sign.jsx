@@ -35,7 +35,6 @@ const Sign = () => {
             password: form.password
         })
 
-        console.log(data.data)
         if (data.data.success) {
             await swal("Sign-in Successfuly", "", "success");
             navigate("/login")
@@ -44,7 +43,6 @@ const Sign = () => {
         }
     }
 
-    console.log(error)
 
 
     useEffect(()=>{

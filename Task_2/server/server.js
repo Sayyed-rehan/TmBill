@@ -45,11 +45,10 @@ app.post("/create", async (req, res) => {
 app.get("/read", async (req, res) => {
 
     let { title, desc } = req.query
-    console.log(title, desc)
+    
 
     title = title || '[A-Za-z0-9]'
     desc = desc || '[A-Za-z0-9]'
-    console.log(title, desc)
 
     try {
         const data = await todo.find({
@@ -83,7 +82,6 @@ app.patch("/update/:id", async (req, res) => {
     const { title, desc } = req.body
     const { id } = req.params
 
-    console.log(id, title, desc)
 
     try {
         

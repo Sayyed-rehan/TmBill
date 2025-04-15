@@ -30,7 +30,6 @@ const Login = ()=>{
             password:form.password
         })
 
-        console.log(data.data);
 
         seterror(data.data)
         if(data.data.success){
@@ -47,7 +46,6 @@ const Login = ()=>{
         }
     })
 
-    console.log('',error)
 
     return(
         <div>

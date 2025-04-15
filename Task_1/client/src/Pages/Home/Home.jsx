@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Box, Button, Typography} from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import { useNavigate } from 'react-router'
 import "./Home.css"
 import swal from "sweetalert"
@@ -9,35 +9,35 @@ const Home = () => {
 
     const [data, setData] = useState(null)
 
-    useEffect(()=>{
+    useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user')) || null
-        console.log(user)
-        if(user){
+        
+        if (user) {
             setData(user)
-        }else{
+        } else {
             navigate("/login")
         }
-    },[])
+    }, [])
 
-    const handleLogout = async()=>{
+    const handleLogout = async () => {
         localStorage.removeItem('user')
         await swal("Logout Successfuly", "", "success");
         navigate("/login")
     }
 
-    
 
-  return (
-    <div>
-        <Box className="home-container">
-            <Typography variant='h4' color='primary'>Hello <strong>{ data?.name} </strong>
-            </Typography>
-            <Typography variant='h5' color='primary'> {data?.email}</Typography>
-            <Typography variant='h6' color='info'> {data?.contact}</Typography>
-            <Button variant='contained' color='error' onClick={handleLogout} >Logout</Button>
-        </Box>
-    </div>
-  )
+
+    return (
+        <div>
+            <Box className="home-container">
+                <Typography variant='h4' color='primary'>Hello <strong>{data?.name} </strong>
+                </Typography>
+                <Typography variant='h5' color='primary'> {data?.email}</Typography>
+                <Typography variant='h6' color='info'> {data?.contact}</Typography>
+                <Button variant='contained' color='error' onClick={handleLogout} >Logout</Button>
+            </Box>
+        </div>
+    )
 }
 
 export default Home

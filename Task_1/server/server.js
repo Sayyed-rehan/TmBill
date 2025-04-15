@@ -85,7 +85,6 @@ app.post("/login", async (req, res) => {
 
 
 if (process.env.NODE_ENV === 'production') {
-    // console.log("yes", path.join(___dirname, '..', 'client', 'dist'))
     app.use(express.static(path.join(___dirname, '..', 'client', 'dist')));
   
     app.get('*"my-name"', (req, res) => {
@@ -94,7 +93,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-console.log(PORT, process.env.NODE_ENV)
 app.listen(PORT, () => {
     console.log(`server started at ${PORT}`);
 })

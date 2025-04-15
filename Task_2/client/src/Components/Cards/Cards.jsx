@@ -10,7 +10,6 @@ import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 
 
 const Cards = (props) => {
-    // console.log(props.data)
 
     const handleDelete = async () => {
         await swal({
