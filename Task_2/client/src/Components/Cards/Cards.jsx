@@ -45,7 +45,7 @@ const Cards = (props) => {
                         {props.data.title}
                     </Typography>
 
-                    <Typography variant="body2" color='gray'>{props.data.desc}</Typography>
+                    <Typography variant="body2" color='gray' >{props.data.desc}</Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent:"space-around"}}>
                     <Button variant='outlined' size='medium' color='error' onClick={handleDelete} endIcon={<DeleteIcon />}>

@@ -51,7 +51,7 @@ const App = () => {
       
       const data = await axios.get(`/read?title=${search_param.title}`)
     
-
+        console.log(data.data);
       if (data.data.success) {
         setData(data.data.data)
       }
