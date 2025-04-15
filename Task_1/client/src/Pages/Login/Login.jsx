@@ -5,6 +5,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from "axios"
 import "./Login.css"
+import swal from "sweetalert"
 
 const Login = ()=>{
 
@@ -34,6 +35,7 @@ const Login = ()=>{
         seterror(data.data)
         if(data.data.success){
             localStorage.setItem('user', JSON.stringify(data.data.data))
+            await swal("Login Successfuly", "", "success");
             navigate("/")
         }
     }

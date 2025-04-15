@@ -6,7 +6,7 @@ import "./Sign.css"
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useEffect } from 'react'
-
+import swal from 'sweetalert'
 
 const Sign = () => {
 
@@ -37,6 +37,7 @@ const Sign = () => {
 
         console.log(data.data)
         if (data.data.success) {
+            await swal("Sign-in Successfuly", "", "success");
             navigate("/login")
         } else {
             seterror(data.data.mess)

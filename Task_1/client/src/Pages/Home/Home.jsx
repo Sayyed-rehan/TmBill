@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Box, Button, Typography} from "@mui/material"
 import { useNavigate } from 'react-router'
 import "./Home.css"
-
+import swal from "sweetalert"
 const Home = () => {
 
     const navigate = useNavigate()
@@ -19,8 +19,9 @@ const Home = () => {
         }
     },[])
 
-    const handleLogout = ()=>{
+    const handleLogout = async()=>{
         localStorage.removeItem('user')
+        await swal("Logout Successfuly", "", "success");
         navigate("/login")
     }
 
