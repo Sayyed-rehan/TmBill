@@ -85,7 +85,7 @@ app.patch("/update/:id", async (req, res) => {
 
     try {
         
-        const data = await todo.findByIdAndUpdate({ _id: id }, req.body)
+        const data = await todo.findByIdAndUpdate({ _id: id }, req.body, {runValidators: true})
 
         res.json({
             success: true,
