@@ -95,7 +95,7 @@ app.patch("/update/:id", async (req, res) => {
 
         res.json({
             success: false,
-            mess: error
+            mess: error?.message,
         })
     }
 })
